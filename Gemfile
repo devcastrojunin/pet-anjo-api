@@ -5,6 +5,8 @@ ruby "3.0.2"
 
 gem "rails", "~> 7.0.3", ">= 7.0.3.1"
 
+gem "active_model_serializers", "~> 0.10.13"
+
 gem "sqlite3", "~> 1.4"
 
 gem "puma", "~> 5.0"
@@ -20,12 +22,12 @@ gem "rack-cors"
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
+  gem "faker"
 end
 
 group :test do
   gem "rspec-rails", "~> 5.1"
   gem "factory_bot_rails"
-  gem "faker"
   gem "shoulda-matchers", "~> 5.1"
   gem "simplecov", "~> 0.21.2", require: false
 end
