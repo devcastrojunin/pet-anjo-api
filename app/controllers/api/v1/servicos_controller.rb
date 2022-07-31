@@ -1,10 +1,14 @@
 class Api::V1::ServicosController < ApplicationController
   before_action :set_servico, only: %i[ show update destroy ]
+  
 
   def index
     @servicos = Servico.all
-
-    render json: @servicos
+    if @servicos.empty?
+      render json: {error: "Nenhum item encontrado."}, status: :not_found
+    else
+      render json: @servicos
+    end
   end
 
   def show
@@ -23,7 +27,7 @@ class Api::V1::ServicosController < ApplicationController
 
   def update
     if @servico.update(servico_params)
-      render json: @servico
+      render json: @servico, status: :success
     else
       render json: @servico.errors, status: :unprocessable_entity
     end
@@ -31,6 +35,7 @@ class Api::V1::ServicosController < ApplicationController
 
   def destroy
     @servico.destroy
+    render json: {message: "Dados removidos com sucesso."}, status: :ok
   end
 
   private
@@ -39,6 +44,6 @@ class Api::V1::ServicosController < ApplicationController
     end
 
     def servico_params
-      params.require(:servico).permit(:nome_servico, :nome_pet, :data_inicio_servico, :data_final_servico, :valor_servico, :total_unidade_servico)
+      params.require(:servico).permit(:nome_servico, :valor_servico)
     end
 end
