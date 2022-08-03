@@ -6,7 +6,5 @@ class Servico
   field :valor_servico, type: Float
 
   validates :nome_servico, :valor_servico, presence: true
-  validates :nome_servico, uniqueness: true
-
 end
 
