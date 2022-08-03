@@ -1,0 +1,228 @@
+---
+swagger: '2.0'
+info:
+  title: Pet anjo carrinho API V1
+  version: v1
+basePath: "/"
+definitions:
+  User:
+    type: object
+    properties:
+      id:
+        type: integer
+        example: '1'
+      name:
+        type: string
+        example: Junior Castro
+      email:
+        type: string
+        example: junior.castro@teste.com
+  Servico:
+    type: object
+    properties:
+      id:
+        type: integer
+        example: '1'
+      nome_servico:
+        type: string
+        example: Passeio
+      valor_servico:
+        type: float
+        example: '45.50'
+  Order:
+    type: object
+    properties:
+      user_id:
+        type: integer
+        example: '2'
+      servico_id:
+        type: integer
+        example: '3'
+      nome_pet:
+        type: string
+        example: Totó
+      data_inicio_servico:
+        type: date
+        example: '2022-08-10'
+      data_final_servico:
+        type: date
+        example: '2022-08-11'
+      total_unidade_servico:
+        type: integer
+        example: '5'
+  ErrorResponse:
+    type: object
+    properties:
+      messages:
+        type: array
+        items:
+          type: string
+          example: Error description
+paths:
+  "/api/v1/orders":
+    get:
+      summary: list servicos
+      tags:
+      - Orders
+      responses:
+        '200':
+          description: successful
+  "/api/v1/orders/{id}":
+    parameters:
+    - name: id
+      in: path
+      type: string
+      description: id
+      required: true
+    delete:
+      summary: delete order
+      tags:
+      - Orders
+      responses:
+        '200':
+          description: successful
+  "/api/v1/servicos":
+    get:
+      summary: list servicos
+      tags:
+      - Serviços
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create servico
+      tags:
+      - Serviços
+      consumes:
+      - application/json
+      parameters:
+      - name: servico
+        in: body
+        schema:
+          type: object
+          properties:
+            type: array
+            items:
+              "$ref": "#/definitions/Servico"
+          required:
+          - nome_servico
+          - valor_servico
+      responses:
+        '201':
+          description: successful
+  "/api/v1/servicos/{id}":
+    parameters:
+    - name: id
+      in: path
+      type: string
+      description: id
+      required: true
+    get:
+      summary: show servico
+      tags:
+      - Serviços
+      responses:
+        '200':
+          description: successful
+    put:
+      summary: update servico
+      tags:
+      - Serviços
+      consumes:
+      - application/json
+      parameters:
+      - name: servico
+        in: body
+        schema:
+          type: object
+          properties:
+            users:
+              type: array
+              items:
+                "$ref": "#/definitions/Servico"
+          required:
+          - nome_servico
+          - valor_servico
+      responses:
+        '200':
+          description: successful
+    delete:
+      summary: delete servico
+      tags:
+      - Serviços
+      responses:
+        '200':
+          description: successful
+  "/api/v1/users":
+    get:
+      summary: list users
+      tags:
+      - Usuários
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create user
+      tags:
+      - Usuários
+      consumes:
+      - application/json
+      parameters:
+      - name: user
+        in: body
+        schema:
+          type: object
+          properties:
+            users:
+              type: array
+              items:
+                "$ref": "#/definitions/User"
+          required:
+          - name
+          - email
+      responses:
+        '201':
+          description: successful
+  "/api/v1/users/{id}":
+    parameters:
+    - name: id
+      in: path
+      type: string
+      description: id
+      required: true
+    get:
+      summary: show user
+      tags:
+      - Usuários
+      responses:
+        '200':
+          description: successful
+    put:
+      summary: update user
+      tags:
+      - Usuários
+      consumes:
+      - application/json
+      parameters:
+      - name: user
+        in: body
+        schema:
+          type: object
+          properties:
+            users:
+              type: array
+              items:
+                "$ref": "#/definitions/User"
+          required:
+          - name
+          - email
+      responses:
+        '200':
+          description: successful
+    delete:
+      summary: delete user
+      tags:
+      - Usuários
+      responses:
+        '200':
+          description: successful
