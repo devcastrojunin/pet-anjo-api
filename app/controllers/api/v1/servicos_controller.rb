@@ -27,7 +27,7 @@ class Api::V1::ServicosController < ApplicationController
 
   def update
     if @servico.update(servico_params)
-      render json: @servico, status: :success
+      render json: @servico, status: :ok
     else
       render json: @servico.errors, status: :unprocessable_entity
     end
