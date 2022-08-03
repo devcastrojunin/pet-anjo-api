@@ -1,24 +1,9 @@
-# README
+# Pet anjo API checkout
+API desenvolvida visando o desafio proposto para desenvolvedor Ruby pleno.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Modelo da API 
+A API consiste em no relacionamento entre dados de
+- Usuário
+- Serviço
+- Order
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
