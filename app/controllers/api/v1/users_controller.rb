@@ -8,7 +8,6 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def show
-    documento_not_found(@user)
     render json: @user
   end
 
