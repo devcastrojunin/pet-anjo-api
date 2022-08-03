@@ -28,7 +28,7 @@ DELETE /servicos/:id //Remove um serviço
 
 // Users
 GET /orders //Retorna a lista de orders 
-GET /user_orders/:id //Retorna uma order por id do usuário
+GET /user_orders/:id //Retorna as orders do usuário 'logado'
 POST /orders //Cria uma nova order 
 DELETE /orders/:id //Remove uma order
 
