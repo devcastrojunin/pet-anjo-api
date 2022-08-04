@@ -60,3 +60,5 @@ Para rodar os testes execute na raiz do comando: `rspec`
 ## Documentação
 Para escrita da documentação da API foi utilizada a gem Rswag. Essa gem integra o RSpec com o swagger.
 Para visualizar a documentação do projeto, após a aplicação rodando acesse: [http://localhost:3000/api-docs](http://localhost:3000/api-docs/index.html)
+
+Observação: Também estou disponibilizando a colection do postman. O arquivo `Pet Anjo Checkout.postman_collection.json` está na raiz do projeto.

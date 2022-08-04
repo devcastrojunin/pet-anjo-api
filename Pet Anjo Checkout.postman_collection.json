@@ -1,0 +1,231 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Pet Anjo Checkout",
+		"_postman_id": "636dd573-7762-1126-e465-ff08b41d8885",
+		"description": "# Introduction\nWhat does your API do?\n\n# Overview\nThings that the developers should know about\n\n# Authentication\nWhat is the preferred way of using the API?\n\n# Error Codes\nWhat errors and status codes can a user expect?\n\n# Rate limit\nIs there a limit to the number of requests an user can send?",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"description": "",
+			"item": [
+				{
+					"name": "/users",
+					"request": {
+						"url": "http://localhost:3000/api/v1/users",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/users/:id",
+					"request": {
+						"url": "http://localhost:3000/api/v1/users/62e591799cc01a412f596bf0",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/users",
+					"request": {
+						"url": "http://localhost:3000/api/v1/users",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Junior Castro\",\n\t\"email\": \"junior.castro@teste.com\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/users/:id",
+					"request": {
+						"url": "http://localhost:3000/api/v1/users/62e468969cc01a4ce4269384",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Antonio Carlos da Silva\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/users/:id",
+					"request": {
+						"url": "http://localhost:3000/api/v1/users/62e56ebc9cc01a28047b1f7a",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Servicos",
+			"description": "",
+			"item": [
+				{
+					"name": "/servicos",
+					"request": {
+						"url": "http://localhost:3000/api/v1/servicos",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/servicos/:id",
+					"request": {
+						"url": "http://localhost:3000/api/v1/servicos/62e6a0569cc01a3e53a0e6b4",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/servicos",
+					"request": {
+						"url": "http://localhost:3000/api/v1/servicos",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome_servico\" : \"Passeio matinal\",\n  \"valor_servico\" : 45.00\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/servicos/:id",
+					"request": {
+						"url": "http://localhost:3000/api/v1/servicos/62e6a0569cc01a3e53a0e6b5",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome_servico\" : \"Passeio\",\n  \"valor_servico\" : 45.75\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/servicos/:id",
+					"request": {
+						"url": "http://localhost:3000/api/v1/servicos/62e6a0569cc01a3e53a0e6b5",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome_servico\" : \"Passeio\",\n  \"valor_servico\" : 45.75\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"description": "",
+			"item": [
+				{
+					"name": "/orders",
+					"request": {
+						"url": "http://localhost:3000/api/v1/orders",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/user_orders/:id",
+					"request": {
+						"url": "http://localhost:3000/api/v1/servicos",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/orders",
+					"request": {
+						"url": "http://localhost:3000/api/v1/orders",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"user_id\": \"62e6a1799cc01a3fa65d8e10\",\n  \"servico_id\": \"62e6a0569cc01a3e53a0e6b5\",\n  \"nome_pet\": \"Totó\", \n  \"data_inicio_servico\": \"2022-08-01\", \n  \"data_final_servico\": \"2022-08-02\", \n  \"total_unidade_servico\": 2\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/orders/:id",
+					"request": {
+						"url": "http://localhost:3000/api/v1/orders/62e6af8a9cc01a47835ba32",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
